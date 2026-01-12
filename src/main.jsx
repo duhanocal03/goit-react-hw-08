@@ -7,13 +7,16 @@ import { store, persistor } from "./redux/store";
 import App from "./components/App/App";
 import "./index.css";
 
+import { HashRouter } from "react-router-dom"; // BrowserRouter yerine bunu import et
+
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
-        <BrowserRouter basename="/goit-react-hw-08">
+        {/* HashRouter kullanırken basename gerekmez */}
+        <HashRouter>
           <App />
-        </BrowserRouter>
+        </HashRouter>
       </PersistGate>
     </Provider>
   </React.StrictMode>

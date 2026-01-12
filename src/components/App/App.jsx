@@ -20,25 +20,44 @@ export default function App() {
     dispatch(refreshUser());
   }, [dispatch]);
 
-  return isRefreshing ? (
-    <b>Refreshing user...</b>
-  ) : (
-    <Suspense fallback={<div>Loading...</div>}>
+  // Sayfa yenilenirken beyaz ekran yerine kısa bir mesaj gösterir
+  if (isRefreshing) {
+    return <b>Refreshing user...</b>;
+  }
+
+  return (
+    <Suspense fallback={<div>Loading page...</div>}>
       <Routes>
         <Route path="/" element={<Layout />}>
+          {/* Ana sayfa */}
           <Route index element={<HomePage />} />
+          
+          {/* Kayıt Sayfası - Giriş yapmışsa rehbere atar */}
           <Route
-            path="/register"
-            element={<RestrictedRoute redirectTo="/contacts" component={<RegistrationPage />} />}
+            path="register"
+            element={
+              <RestrictedRoute redirectTo="/contacts" component={<RegistrationPage />} />
+            }
           />
+          
+          {/* Giriş Sayfası - Giriş yapmışsa rehbere atar */}
           <Route
-            path="/login"
-            element={<RestrictedRoute redirectTo="/contacts" component={<LoginPage />} />}
+            path="login"
+            element={
+              <RestrictedRoute redirectTo="/contacts" component={<LoginPage />} />
+            }
           />
+          
+          {/* Rehber Sayfası - Giriş yapmamışsa login'e atar */}
           <Route
-            path="/contacts"
-            element={<PrivateRoute redirectTo="/login" component={<ContactsPage />} />}
+            path="contacts"
+            element={
+              <PrivateRoute redirectTo="/login" component={<ContactsPage />} />
+            }
           />
+          
+          {/* Tanımlanmayan yollar için ana sayfaya yönlendir (Opsiyonel) */}
+          <Route path="*" element={<HomePage />} />
         </Route>
       </Routes>
     </Suspense>
