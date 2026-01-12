@@ -1,0 +1,44 @@
+.card:hover {
+    transform: translateX(5px);
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.name {
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.number {
+    color: #888;
+    font-size: 0.9rem;
+}
+
+.card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    background-color: #242424;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    border-left: 4px solid #646cff;
+}
+
+.deleteBtn {
+    padding: 6px 12px;
+    background: transparent;
+    color: #ff4d4d;
+    border: 1px solid #ff4d4d;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.deleteBtn:hover {
+    background: #ff4d4d;
+    color: white;
+}

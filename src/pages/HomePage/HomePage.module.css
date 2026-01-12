@@ -1,0 +1,68 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 20px;
+    min-height: calc(100vh - 200px);
+}
+
+.title {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #646cff;
+}
+
+.description {
+    font-size: 1.2rem;
+    max-width: 600px;
+    color: #b4b4b4;
+    line-height: 1.6;
+    margin-bottom: 40px;
+}
+
+.welcomeBox,
+.authBox {
+    padding: 20px;
+}
+
+.welcomeText {
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.btnGroup {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.ctaBtn {
+    padding: 12px 28px;
+    background-color: #646cff;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.ctaBtn:hover {
+    background-color: #535bf2;
+}
+
+.secondaryBtn {
+    padding: 12px 28px;
+    background-color: transparent;
+    color: #646cff;
+    text-decoration: none;
+    border: 2px solid #646cff;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.secondaryBtn:hover {
+    background-color: rgba(100, 108, 255, 0.1);
+}
